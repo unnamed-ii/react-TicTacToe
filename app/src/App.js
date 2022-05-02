@@ -74,7 +74,6 @@ function App() {
       <div className="container">
         <table>
           <tbody>
-          Turn: {turn}
           <tr>
             <Cell num={0}/>
             <Cell num={1}/>
@@ -90,14 +89,16 @@ function App() {
             <Cell num={7}/>
             <Cell num={8}/>
           </tr>
-          {winner && (
-              <>
-                <h1>"{winner}" is a Winner!</h1>
-                <button onClick={handleRestart}>Play Again</button>
-              </>
-          )}
           </tbody>
         </table>
+        <div className="winner">
+          {winner && (
+              <div className="winner__box">
+                <h1>"{winner}" is a Winner!</h1>
+                <button onClick={handleRestart}>Play Again</button>
+              </div>
+          )}
+        </div>
       </div>
   );
 }
